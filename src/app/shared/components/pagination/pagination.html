@@ -1,0 +1,16 @@
+<div class="join flex justify-center items-center mt-4 mb-10">
+  @for (page of getPagesList(); track $index) {
+    <button
+      [routerLink]="[]"
+      [queryParams]="{ page: page }"
+      [queryParamsHandling]="'merge'"
+      [class.btn-primary]="page === activatePage()"
+      class="join-item btn btn-primary"
+      (click)="activatePage.set(page)"
+    >
+      {{ page }}
+    </button>
+  } @empty {
+    <p>No pages</p>
+  }
+</div>

@@ -1,6 +1,7 @@
 @let products = productsResource.value();
 <h1 class="text-3xl font-bold font-monserrat">All Products</h1>
 <h2 class="text-xl mb-4">for every taste</h2>
+
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-2 gap-3">
   @for (product of products?.products; track $index) {
     <product-card [product]="product" />
@@ -10,3 +11,4 @@
     <p>No hay productos</p>
   }
 </div>
+<app-pagination [currentPage]="page()" [pages]="products?.pages ?? 0" />
