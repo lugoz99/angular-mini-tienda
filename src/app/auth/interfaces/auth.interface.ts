@@ -6,3 +6,8 @@ export interface User {
   isActive: boolean;
   roles:    string[];
 }
+
+export interface AuthResponse{
+  user:User,
+  token: string;
+}
